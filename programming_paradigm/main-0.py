@@ -12,7 +12,8 @@ def main():
     amount = float(params[0]) if params else None
 
     if command == "deposit" and amount is not None:
-        account.deposit(amount)
+         account.deposit(amount)  # Updates the balance
+         print(f"Deposited: ${amount:.1f}")  # Displays the message
        
     elif command == "withdraw" and amount is not None:
         if account.withdraw(amount):
