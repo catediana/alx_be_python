@@ -1,12 +1,13 @@
+# robust_division_calculator.py
 def safe_divide(numerator, denominator):
     try:
-        numerator = float(input("enter the numerator: "))
-        denominator = float(input("enter the denominator: "))
+        # Convert inputs to floats
+        numerator = float(numerator)
+        denominator = float(denominator)
 
-        #return float(numerator)/float(denominator)
-        return(f"The result of the division is {float(numerator)/float(denominator):.1f}")
+        # Perform division
+        return f"The result of the division is {numerator / denominator:.1f}"
     except ZeroDivisionError:
         return "Error: Cannot divide by zero."
-
     except ValueError:
         return "Error: Please enter numeric values only."
