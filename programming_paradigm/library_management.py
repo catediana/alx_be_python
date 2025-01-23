@@ -6,7 +6,24 @@ class Book:
         self.author = author
         self._is_checked_out = False  # Private attribute to track availability
 
-    
+    def check_out(self):
+        """Marks the book as checked out if available."""
+        if not self._is_checked_out:
+            self._is_checked_out = True
+            return True
+        return False
+
+    def return_book(self):
+        """Marks the book as available if it was checked out."""
+        if self._is_checked_out:
+            self._is_checked_out = False
+            return True
+        return False
+
+    def is_available(self):
+        """Returns True if the book is available, False otherwise."""
+        return not self._is_checked_out
+
     
 
 class Library:
