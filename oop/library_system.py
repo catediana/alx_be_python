@@ -12,7 +12,7 @@ class EBook(Book):
         self.file_size = file_size
        # return f"{super().__str__()} (File size: {self.file_size} MB)"
     def __str__(self):
-        return f"EBook: {self.title} by {self.author}, file size: {self.file_size}KG"   
+        return f"EBook: {self.title} by {self.author}, File Size: {self.file_size}KB"   
 
  #creating another child class which also inherits from the  Book class
 class PrintBook(Book):
