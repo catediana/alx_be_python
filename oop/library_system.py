@@ -21,7 +21,7 @@ class PrintBook(Book):
         self.page_count = page_count
         #return f"{super().__str__()} (Pages: {self.page_count})"
     def __str__(self):
-        return f"PrintBook: {self.title} by {self.author} , page count: {self.page_count}"   
+        return f"PrintBook: {self.title} by {self.author}, page count: {self.page_count}"   
 
 
  
@@ -35,7 +35,7 @@ class Library:
         """Add a Book, EBook, or PrintBook instance to the library."""
         if isinstance(book, Book):
             self.books.append(book)
-            print(f"Added: {book}")
+            #print(book)
         else:
             print("Only instances of Book or its subclasses can be added.")
 
@@ -43,7 +43,7 @@ class Library:
         """Print details of each book in the library."""
         if not self.books:
             print("No books in the library.")
-            return
-        print("Books in Library:")
+           #return
+       # print("Books in Library:")
         for book in self.books:
             print(book)
