@@ -3,19 +3,28 @@ class Book:
     def __init__(self,title,author):
         self.title = title
         self.author = author
-
+    def __str__(self):
+        return f"book: {self.title} by {self.author}"
 #creating a child class of ebook ehich inerits from the Book class
 class EBook(Book):
     def __init__(self,title,author,file_size):
         super().__init__(title,author,)
         self.file_size = file_size
+       # return f"{super().__str__()} (File size: {self.file_size} MB)"
+    def __str__(self):
+        return f"EBook: {self.title} by {self.author}, file size: {self.file_size}KG"   
 
  #creating another child class which also inherits from the  Book class
 class PrintBook(Book):
     def __init__(self,title,author,page_count):
         super().__init__(title,author) 
         self.page_count = page_count
+        #return f"{super().__str__()} (Pages: {self.page_count})"
+    def __str__(self):
+        return f"PrintBook: {self.title} by {self.author} , page count: {self.page_count}"   
 
+
+ 
 # implement a Library class demonstrating composition by managing a collection of books.
 class Library:
     def __init__(self):
