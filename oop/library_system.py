@@ -4,7 +4,7 @@ class Book:
         self.title = title
         self.author = author
     def __str__(self):
-        return f"book: {self.title} by {self.author}"
+        return f"Book: {self.title} by {self.author}"
 #creating a child class of ebook ehich inerits from the Book class
 class EBook(Book):
     def __init__(self,title,author,file_size):
