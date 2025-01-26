@@ -5,28 +5,30 @@ class Book:
         self.author = author
 
 #creating a child class of ebook ehich inerits from the Book class
-class EBook:
-    def __init__(self,file_size,):
+class EBook(Book):
+    def __init__(self,title,author,file_size):
         super().__init__(title,author,)
         self.file_size = file_size
 
  #creating another child class which also inherits from the  Book class
-class PrintBook:
-    def __init__(self,page_count):
-        supre().__init__(title,author) 
+class PrintBook(Book):
+    def __init__(self,title,author,page_count):
+        super().__init__(title,author) 
         self.page_count = page_count
 
 # implement a Library class demonstrating composition by managing a collection of books.
 class Library:
-    def __init__(self,):
-        self.books = [Book, EBook, PrintBook]
+    def __init__(self):
+        """Initialize an empty library with a list to store books."""
+        self.books = []
 
-        def add_books(self,book):
-            if isinstance (book,Books):
-                self.books.append(book)
-                print(f"added{book}")
-            else:
-                print("Only book in instance of Book or its subclass are to be added") 
+    def add_book(self, book):
+        """Add a Book, EBook, or PrintBook instance to the library."""
+        if isinstance(book, Book):
+            self.books.append(book)
+            print(f"Added: {book}")
+        else:
+            print("Only instances of Book or its subclasses can be added.")
 
     def list_books(self):
         """Print details of each book in the library."""
